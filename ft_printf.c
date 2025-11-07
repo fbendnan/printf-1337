@@ -2,26 +2,26 @@
 
 static void ft_format(va_list ap, char* str)
 {
-    if (*str == 'c')
-        ft_putchar(va_arg(ap, int));
-    else if (*str == 's')
-        ft_putstr(va_arg(ap, char*));
+	if (*str == 'c')
+		ft_putchar(va_arg(ap, int));
+	else if (*str == 's')
+		ft_putstr(va_arg(ap, char*));
 	else if (*str == 'i' || *str == 'd')
 		ft_putnbr(va_arg(ap, int));
-    else if (*str == 'p')
-        ft_putstr(va_arg(ap, void*));
+	else if (*str == 'p')
+		ft_putstr(va_arg(ap, void*));
    else if (*str == 'u')
-        ft_putu(va_arg(ap, unsigned int));
-    else if (*str == 'x' || *str == 'X')
-    {
-        if (*str == 'x')
-            ft_puthex(va_arg(ap, unsigned int), "123456789abcdef");
-        if (*str == 'X')
-            ft_puthex(va_arg(ap, unsigned int), "123456789ABCDEF");    
-    }
-    else if (*str == '%')
-        ft_putchar(*str);
-    
+		ft_putu(va_arg(ap, unsigned int));
+	else if (*str == 'x' || *str == 'X')
+	{
+		if (*str == 'x')
+			ft_puthex(va_arg(ap, unsigned int), "123456789abcdef");
+		if (*str == 'X')
+			ft_puthex(va_arg(ap, unsigned int), "123456789ABCDEF"); 
+	}
+	else if (*str == '%')
+		ft_putchar(*str);
+		
 }
 
 int	ft_printf(char* format, ...)
@@ -31,20 +31,21 @@ int	ft_printf(char* format, ...)
 	va_start(ap, format);
 	while (*format)
 	{
-        if(*format == '%')
-        {
-            format++;
-            ft_format(ap, format);
-        }      
-        else
-            ft_putchar(*format);
-        format++;
-    }
-    va_end(ap);
+		if(*format == '%')
+		{
+			format++;
+			ft_format(ap, format);
+		}
+		else
+			ft_putchar(*format);
+		format++;
+	}
+	va_end(ap);
 	return 0;
 }
 
 int main()
 {
-    ft_printf("%x\n", 464637);
+	int d = 23;
+	ft_printf("%p\n", &d);
 }

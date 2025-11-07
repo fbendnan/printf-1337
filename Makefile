@@ -1,0 +1,2 @@
+NAME = printf.a
+
