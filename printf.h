@@ -3,8 +3,7 @@
 
 #include <unistd.h>
 #include <stdarg.h>
-// #include <stddef.h>
-// # include <stdlib.h>
+# include <stdlib.h>
 #include <stdint.h>
 
 int	ft_printf(char* format, ...);

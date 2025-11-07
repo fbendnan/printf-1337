@@ -9,7 +9,7 @@ static void ft_format(va_list ap, char* str)
 	else if (*str == 'i' || *str == 'd')
 		ft_putnbr(va_arg(ap, int));
 	else if (*str == 'p')
-		ft_putstr(va_arg(ap, void*));
+		ft_putptr(va_arg(ap, void*));
    else if (*str == 'u')
 		ft_putu(va_arg(ap, unsigned int));
 	else if (*str == 'x' || *str == 'X')
@@ -28,6 +28,8 @@ int	ft_printf(char* format, ...)
 {
 	va_list	ap;
 	size_t	count;
+
+	count = 0;
 	va_start(ap, format);
 	while (*format)
 	{
@@ -39,9 +41,10 @@ int	ft_printf(char* format, ...)
 		else
 			ft_putchar(*format);
 		format++;
+		count++;
 	}
 	va_end(ap);
-	return 0;
+	return count;
 }
 
 int main()
