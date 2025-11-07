@@ -14,14 +14,14 @@ static void ft_format(va_list ap, char* str)
         ft_putu(va_arg(ap, unsigned int));
     else if (*str == 'x' || *str == 'X')
     {
-        /* code */
+        if (*str == 'x')
+            ft_puthex(va_arg(ap, unsigned int), "123456789abcdef");
+        if (*str == 'X')
+            ft_puthex(va_arg(ap, unsigned int), "123456789ABCDEF");    
     }
     else if (*str == '%')
         ft_putchar(*str);
     
-    
-    
-
 }
 
 int	ft_printf(char* format, ...)
@@ -46,5 +46,5 @@ int	ft_printf(char* format, ...)
 
 int main()
 {
-    ft_printf("hello %i", -90);
+    ft_printf("%x\n", 464637);
 }
