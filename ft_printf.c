@@ -6,10 +6,22 @@ static void ft_format(va_list ap, char* str)
         ft_putchar(va_arg(ap, int));
     else if (*str == 's')
         ft_putstr(va_arg(ap, char*));
-	else if (*str == 'i')
+	else if (*str == 'i' || *str == 'd')
 		ft_putnbr(va_arg(ap, int));
-	else if (*str == 'd')
-		ft_putnbr(va_arg(ap, int));
+    else if (*str == 'p')
+        ft_putstr(va_arg(ap, void*));
+   else if (*str == 'u')
+        ft_putu(va_arg(ap, unsigned int));
+    else if (*str == 'x' || *str == 'X')
+    {
+        /* code */
+    }
+    else if (*str == '%')
+        ft_putchar(*str);
+    
+    
+    
+
 }
 
 int	ft_printf(char* format, ...)
