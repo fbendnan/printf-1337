@@ -15,9 +15,9 @@ static void ft_format(va_list ap, char* str)
 	else if (*str == 'x' || *str == 'X')
 	{
 		if (*str == 'x')
-			ft_puthex(va_arg(ap, unsigned int), "123456789abcdef");
+			ft_puthex(va_arg(ap, unsigned long long), "0123456789abcdef");
 		if (*str == 'X')
-			ft_puthex(va_arg(ap, unsigned int), "123456789ABCDEF"); 
+			ft_puthex(va_arg(ap, unsigned long long), "0123456789ABCDEF"); 
 	}
 	else if (*str == '%')
 		ft_putchar(*str);
@@ -47,8 +47,10 @@ int	ft_printf(char* format, ...)
 	return count;
 }
 
+#include <stdio.h>
 int main()
 {
 	int d = 23;
-	ft_printf("%p\n", &d);
+	int g = ft_printf("%p\n", &d);
+    printf("%d\n", g);
 }

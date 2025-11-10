@@ -43,12 +43,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 
-static size_t ft_nblenbase(unsigned int nb, size_t base_len)
+static size_t ft_nblenbase(unsigned long long nb, size_t base_len)
 {
 	size_t	len;
 
-	len = 0;
-	while (nb > base_len)
+	len = 1;
+	while (nb >= base_len)
 	{
 		nb = nb / base_len;
 		len++;
@@ -56,7 +56,7 @@ static size_t ft_nblenbase(unsigned int nb, size_t base_len)
 	return	(len);
 }
 
-char	*ft_convertbase(unsigned int nb, char *base)
+char	*ft_convertbase(unsigned long long nb, char *base)
 {
 	char	*str;
 	size_t	base_len;
@@ -69,7 +69,8 @@ char	*ft_convertbase(unsigned int nb, char *base)
 		return(NULL);
 	while (nb_len)
 	{
-		str[--nb_len] = base[nb % base_len];
+		nb_len--;
+		str[nb_len] = base[nb % base_len];
 		nb /= base_len;
 	}
 	return (str);

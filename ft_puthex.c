@@ -1,6 +1,6 @@
 #include "printf.h"
 
-void	ft_puthex(unsigned int hex, char* base)
+void	ft_puthex(unsigned long long hex, char* base)
 {
 	char*	str;
 

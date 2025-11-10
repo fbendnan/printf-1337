@@ -13,10 +13,10 @@ void	ft_putstr(char *s);
 size_t	ft_strlen(const char *str);
 void ft_putptr(void *p);void ft_putptr(void *p);
 void ft_putu(unsigned int);
-void	ft_puthex(unsigned int hex, char* base);
+void	ft_puthex(unsigned long long hex, char* base);
 
 
-char	*ft_convertbase(unsigned int nb, char *base);
+char	*ft_convertbase(unsigned long long nb, char *base);
 
 
 #endif
