@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printf.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbendnan <fbendnan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/11 21:25:14 by fbendnan          #+#    #+#             */
+/*   Updated: 2025/11/11 22:37:43 by fbendnan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRINTF_H
 # define PRINTF_H
 
@@ -7,16 +19,14 @@
 #include <stdint.h>
 
 int	ft_printf(char* format, ...);
-int	ft_putchar(char c);
-void	ft_putnbr(int n);
-void	ft_putstr(char *s);
+int	ft_putchar(char c, size_t *count);
+void	ft_putnbr(int n, size_t *count);
+void	ft_putstr(char *s, size_t *count);
+void	ft_putptr(void *p, size_t *count);
+void ft_putu(unsigned int nb, size_t *count);
+void	ft_puthex(unsigned int hex, char* base, size_t *count);
 size_t	ft_strlen(const char *str);
-void ft_putptr(void *p);void ft_putptr(void *p);
-void ft_putu(unsigned int);
-void	ft_puthex(unsigned long long hex, char* base);
-
-
-char	*ft_convertbase(unsigned long long nb, char *base);
-
+size_t ft_nblenbase(unsigned long long nb, size_t base_len);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif

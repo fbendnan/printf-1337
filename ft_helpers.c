@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_helpers.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbendnan <fbendnan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/11 21:25:09 by fbendnan          #+#    #+#             */
+/*   Updated: 2025/11/11 22:00:01 by fbendnan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 size_t	ft_strlen(const char *str)
@@ -43,7 +55,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 
-static size_t ft_nblenbase(unsigned long long nb, size_t base_len)
+size_t ft_nblenbase(unsigned long long nb, size_t base_len)
 {
 	size_t	len;
 
@@ -54,24 +66,4 @@ static size_t ft_nblenbase(unsigned long long nb, size_t base_len)
 		len++;
 	}
 	return	(len);
-}
-
-char	*ft_convertbase(unsigned long long nb, char *base)
-{
-	char	*str;
-	size_t	base_len;
-	size_t	nb_len;
-
-	base_len = ft_strlen(base);
-	nb_len = ft_nblenbase(nb, base_len);
-	str = ft_calloc((nb_len + 1), sizeof(char));
-	if(!str)
-		return(NULL);
-	while (nb_len)
-	{
-		nb_len--;
-		str[nb_len] = base[nb % base_len];
-		nb /= base_len;
-	}
-	return (str);
 }
