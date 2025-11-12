@@ -6,7 +6,7 @@
 /*   By: fbendnan <fbendnan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 21:25:09 by fbendnan          #+#    #+#             */
-/*   Updated: 2025/11/11 22:00:01 by fbendnan         ###   ########.fr       */
+/*   Updated: 2025/11/12 08:10:04 by fbendnan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 
-size_t ft_nblenbase(unsigned long long nb, size_t base_len)
+size_t	ft_nblenbase(unsigned long long nb, size_t base_len)
 {
 	size_t	len;
 
@@ -65,5 +65,5 @@ size_t ft_nblenbase(unsigned long long nb, size_t base_len)
 		nb = nb / base_len;
 		len++;
 	}
-	return	(len);
+	return (len);
 }
