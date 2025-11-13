@@ -18,11 +18,13 @@ void	ft_putnbr(int n, size_t *count)
 	{
 		if (n == -2147483648)
 		{
+			*count += 11;
 			write(1, "-2147483648", 11);
 			return ;
 		}
 		else
 		{
+			(*count)++;
 			write(1, "-", 1);
 			n = -n;
 		}
